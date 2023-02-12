@@ -6,4 +6,4 @@ The following dependencies are used in the project:
 •Spring Web
 •Spring Dev Tools
 •JPA & MySQL
-•Thymleaf.
+•Thymleaf
