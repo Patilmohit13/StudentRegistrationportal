@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+	<h2 >Spring Boot Crud System -Student Registation</h2>
+	<tr>
+		<div align = "left" >		   
+		     <h3><a  th:href="@{'/new'}">Add new</a></h3>     
+	    </div>
+	
+	</tr>
+	<tr>
+	
+	<div class="col-sm-5" align = "center">
+                 <div class="panel-body" align = "center" >
+                 <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      		<th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Fee</th>
+            <th>Edit</th>
+            <th>Delete</th>
+   	</tr>
+  </thead>
+  <tbody>
+      <tr  th:each="student : ${liststudent }">
+		<td th:text="${student.id}">Student ID</td>
+		<td th:text="${student.studentname}">StudentName</td>
+		<td th:text="${student.course}">Course</td>
+		<td th:text="${student.fee}">Fee</td>				
+		<td>
+			<a th:href="@{'/edit/' + ${student.id}}">Edit</a>
+		</td>							    
+		<td>
+			<a th:href="@{'/delete/' + ${student.id}}">Delete</a>
+		</td>		    
+		</tr> 
+   
+   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Student</
+  </tbody>
+</table>
+                    
+                 </div>
+
+            </div> 
+
+	</tr>
+
+	</tbody>
+	</table>
+	</div>
+	<!-- Edit Modal -->
+
+</body>
+<style> body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+table {
+	margin: auto;
+	width: 80%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th, td {
+	border: 1px solid #dddddd;
+	padding: 8px;
+}
+
+th {
+	background-color: #dddddd;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ffffff;
+	background-color: #0000ff;
+	padding: 5px;
+	border-radius: 5px;
+}
+</style>
+</html>
